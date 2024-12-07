@@ -1,0 +1,8 @@
+{
+    "name": "bilibili",
+    "author": "Lizho666",
+    "version": "0.0.1",
+    "targetGameBuild": 444,
+    "description": "This is an bilibili mod's description!",
+    "iconPath": "icon.png"
+}
