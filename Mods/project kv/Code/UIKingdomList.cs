@@ -9,6 +9,7 @@ public class UIKingdomList : MonoBehaviour
 
     public GameObject goMain;
     public GameObject goContent;
+    public GameObject goSeci;
 
     public List<UIKingdom> itemList = new List<UIKingdom>();
     public List<UIKingdom> itemLastList = new List<UIKingdom>();
@@ -36,6 +37,7 @@ public class UIKingdomList : MonoBehaviour
             rect.anchoredPosition = new Vector2(-5, -20);
             rect.pivot = new Vector2(1f, 1f);
             goMain.AddComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+
 
 
             goContent = new GameObject("Content");

@@ -10,6 +10,7 @@ public class UIKingdom
 
     public Image image;
     public Text name;
+    public Text seci;
     public Text cityNumber;
     public Text score;
     public Text kDA;
@@ -83,6 +84,32 @@ public class UIKingdom
             rect.anchorMin = new Vector2(0, 0.5f);
             rect.anchorMax = new Vector2(0, 0.5f);
             rect.anchoredPosition = new Vector2(38, 0);
+            rect.sizeDelta = new Vector2(100, 32);
+            rect.pivot = new Vector2(0f, 0.5f);
+
+            var goSe = new GameObject("Panelse");
+            goSe.transform.SetParent(kingdomItem.transform);
+            var tempImage1 = goSe.AddComponent<Image>();
+            tempImage1.sprite = Resources.Load($"{Mod.Info.Path}/GameResources/secioo.png", typeof(Sprite)) as Sprite;
+            tempImage1.color = new Color(1, 1, 1, 0.5f);
+            rect = goSe.GetComponent<RectTransform>();
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.sizeDelta = new Vector2(0, 0);
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.anchoredPosition = new Vector2(0, 32);
+
+            goSe = new GameObject("seci");
+            goSe.transform.SetParent(kingdomItem.transform);
+            seci = goSe.AddComponent<Text>();
+            seci.font = Font.CreateDynamicFontFromOSFont("Arial", 16);
+            seci.alignment = TextAnchor.MiddleLeft;
+            seci.color = Color.black;
+            seci.text = "独自为战";
+            rect = goSe.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(0, 0.5f);
+            rect.anchorMax = new Vector2(0, 0.5f);
+            rect.anchoredPosition = new Vector2(12, 32);
             rect.sizeDelta = new Vector2(100, 32);
             rect.pivot = new Vector2(0f, 0.5f);
 
