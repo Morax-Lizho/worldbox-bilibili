@@ -75,6 +75,7 @@ namespace Bilibili
 
         public void DistributeGiftMsg(PlayerInfo info, GiftMsg msg)
         {
+            Debug.Log($"{msg.giftName},{msg.giftId},{msg.giftPrice},{msg.giftNum}");
             var player = PlayerFactory.GetOrCreate(info);
             player.lastSpeechTime = TimeHelper.ClientNow();
             if (OnGiftMsg != null)

@@ -84,7 +84,7 @@ namespace Bilibili
             {
                 case StageType.A:
                 {
-                    aTimer += 1f;
+                    aTimer += 3f;
                     if(aTimer >= 90f)
                     {
                         stageType = StageType.B;
@@ -107,7 +107,7 @@ namespace Bilibili
                 {
                     UILoading.instance.titleText.text = $"发展时间，禁止开战...(<color=#00c000>{MapBox.instance.mapStats.year}.{MapBox.instance.mapStats.month}/150</color>)";
                     UILoading.instance.titleDownText.text = MapBox.instance.mapStats.description;
-                    if(MapBox.instance.mapStats.year >= 50)
+                    if(MapBox.instance.mapStats.year >= 48)
                     {
                         Debug.Log("Tests war");
                         stageType = StageType.C;
