@@ -103,7 +103,7 @@ namespace Bilibili
             }
 
             // 随机建国
-            public static Kingdom RandomCreate(int actorNumber = 100)
+            public static Kingdom RandomCreate(int actorNumber = 50)
             {
                 var zoneCalculator = Reflection.GetField(MapBox.instance.GetType(), MapBox.instance, "zoneCalculator") as ZoneCalculator;
                 if (zoneCalculator == null)

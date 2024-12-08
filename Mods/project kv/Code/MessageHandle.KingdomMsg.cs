@@ -88,19 +88,8 @@ namespace Bilibili
                 // 命令错误
                 mKingdom = MKingdomManager.instance.GetByKey($"k_{comm[1]}");
             }else{
-                int allPopulationTotal = 100;
-                int avPopulationTotal = 100;
-                {
-                    // TODO 获取平均人口
-                    if(MKingdomManager.instance.allKingdoms.Count > 0 && DivideTheWorld.instance.stageType != DivideTheWorld.StageType.A)
-                    {
-                        foreach(var v in MKingdomManager.instance.allKingdoms.Values)
-                        {
-                            allPopulationTotal += v.kingdom.getPopulationTotal();
-                        }
-                        avPopulationTotal = allPopulationTotal / MKingdomManager.instance.allKingdoms.Count;
-                    }
-                }
+                int allPopulationTotal = 50;
+                int avPopulationTotal = 150;
                 if(player.playerDataInfo.kingdomDataInfo.deathNum+player.playerDataInfo.kingdomDataInfo.winNum <= 10)
                 {
                     avPopulationTotal += 5;
@@ -288,6 +277,7 @@ namespace Bilibili
             }
             if(comm.Count < 2)
             {
+                Debug.Log("error");
                 // 命令错误
                 return;
             }
@@ -378,6 +368,29 @@ namespace Bilibili
                     unit.ToBack();
                 }
             }
+        }
+
+        static public void MsgsSeci(Player player, MessageDistribute.NormalMsg msg, List<string> comm)
+        {
+            if (player.kingdomCivId == null || player.kingdomCivId == "")
+            {
+                Debug.Log($"玩家 {player.name} 还没加入国家");
+                return;
+            }
+            var seciName = msg.msg.Split(' ')[1];
+            if (seciName == null)
+            {
+                return;
+            }
+
+
+            if (player.isKingPlayer == true)
+            {
+                // 可以控制这个国家
+                Debug.Log(seciName);
+                return;
+            }
+            
         }
 
         static public void MsgSurrender(Player player,MessageDistribute.NormalMsg msg,List<string> comm)

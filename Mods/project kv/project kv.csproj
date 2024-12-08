@@ -113,10 +113,43 @@
     <Reference Include="MonoMod.Utils">
       <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NCMS\Core\Assemblies\MonoMod.Utils.dll</HintPath>
     </Reference>
+    <Reference Include="NCMS_memload">
+      <HintPath>E:\SteamLibrary\steamapps\common\worldbox\worldbox_Data\StreamingAssets\mods\NCMS_memload.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Security.Cryptography.X509Certificates" />
+    <Reference Include="System.Security.Principal" />
+    <Reference Include="System.Security.SecureString" />
+    <Reference Include="System.Text.Encoding" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NCMS\Core\Assemblies\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions" />
+    <Reference Include="System.Text.RegularExpressions" />
+    <Reference Include="System.Threading" />
+    <Reference Include="System.Threading.Overlapped" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NCMS\Core\Assemblies\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel" />
+    <Reference Include="System.Threading.Thread" />
+    <Reference Include="System.Threading.ThreadPool" />
+    <Reference Include="System.Threading.Timer" />
+    <Reference Include="System.ValueTuple" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.ReaderWriter" />
+    <Reference Include="System.Xml.XDocument" />
+    <Reference Include="System.Xml.XmlDocument" />
+    <Reference Include="System.Xml.XmlSerializer" />
+    <Reference Include="System.Xml.XPath" />
+    <Reference Include="System.Xml.XPath.XDocument" />
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>..\..\worldbox_Data\Managed\Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>

@@ -47,7 +47,8 @@ namespace Bilibili
         void Start()
         {
             stageType = StageType.A;
-            GameHelper.Paused(true);
+            GameHelper.SetTimeScale(0.1f);
+            //GameHelper.Paused(true);
         }
 
         void Update()
@@ -69,7 +70,7 @@ namespace Bilibili
 
             if(stageType == StageType.B)
             {
-                UILoading.instance.titleText.text = $"发展时间，禁止开战...(<color=#00c000>{MapBox.instance.mapStats.year}.{MapBox.instance.mapStats.month}/150</color>)";
+                UILoading.instance.titleText.text = $"发展时间，禁止开战...(<color=#00c000>{MapBox.instance.mapStats.year}.{MapBox.instance.mapStats.month}/50</color>)";
                 UILoading.instance.load = MapBox.instance.mapStats.year * 12 + MapBox.instance.mapStats.month;
                 UILoading.instance.RefreshDisplay();
             }
@@ -94,7 +95,7 @@ namespace Bilibili
                         }
 
                         GameHelper.SetTimeScale(40f);
-                        UILoading.instance.loadMax = 150 * 12;
+                        UILoading.instance.loadMax = 50 * 12;
                         UILoading.instance.load = MapBox.instance.mapStats.year * 12;
                         UILoading.instance.RefreshDisplay();
                         UILoading.instance.titleDownText.text = "";
@@ -106,8 +107,9 @@ namespace Bilibili
                 {
                     UILoading.instance.titleText.text = $"发展时间，禁止开战...(<color=#00c000>{MapBox.instance.mapStats.year}.{MapBox.instance.mapStats.month}/150</color>)";
                     UILoading.instance.titleDownText.text = MapBox.instance.mapStats.description;
-                    if(MapBox.instance.mapStats.year >= 150)
+                    if(MapBox.instance.mapStats.year >= 50)
                     {
+                        Debug.Log("Tests war");
                         stageType = StageType.C;
                         GameHelper.SetTimeScale(5f);
                         // 可以宣战了
@@ -143,15 +145,19 @@ namespace Bilibili
 
             if(stageType == StageType.C)
             {
+                Main.conf.robotAI = true;
                 // 时间流速会慢慢变快
-                int diffYear = MapBox.instance.mapStats.year - 150;
+                int diffYear = MapBox.instance.mapStats.year - 50;
                 if(diffYear<0)
                 {
                     diffYear =0;
                 }
                 diffYear = (diffYear > 200)?200:diffYear;
                 GameHelper.SetTimeScale(5f + 15f * (diffYear / 200f));
-                if(Main.conf.robotAI == false) return;
+                if(Main.conf.robotAI == false)
+                {
+                    return;
+                }
                 if(MKingdomManager.instance.allKingdoms.Count > 2){
                     // 简易ai
                     {
