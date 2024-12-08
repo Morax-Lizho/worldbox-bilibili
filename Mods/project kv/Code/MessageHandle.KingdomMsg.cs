@@ -388,6 +388,8 @@ namespace Bilibili
             {
                 // 可以控制这个国家
                 Debug.Log(seciName);
+                var civ = MKingdomManager.instance.GetByKey(player.kingdomCivId);
+                civ.uIKingdom.seci.text = seciName;
                 return;
             }
             
