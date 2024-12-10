@@ -95,6 +95,7 @@ namespace Bilibili
         }
         public void SetName(string name)
         {
+            //uIKingdom.isSeci = false;
             kingdom.name = name;
         }
 

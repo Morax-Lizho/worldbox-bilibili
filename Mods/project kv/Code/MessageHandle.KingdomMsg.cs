@@ -390,6 +390,7 @@ namespace Bilibili
                 Debug.Log(seciName);
                 var civ = MKingdomManager.instance.GetByKey(player.kingdomCivId);
                 civ.uIKingdom.seci.text = seciName;
+                civ.uIKingdom.isSeci = true;
                 return;
             }
             

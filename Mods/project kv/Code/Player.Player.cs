@@ -143,7 +143,7 @@ namespace Bilibili
             {
                 var mKingdom = MKingdomManager.instance.GetByKey(kingdomCivId);
                 mKingdom.SetHeadSprite(headSprite);
-                mKingdom.uIKingdom.image.sprite = headSprite;
+                //mKingdom.uIKingdom.image.sprite = headSprite;
             }
             if (unitId != null)
             {

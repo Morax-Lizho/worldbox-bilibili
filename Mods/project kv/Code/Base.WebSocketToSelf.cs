@@ -206,7 +206,8 @@ namespace Bilibili
                     break;
                 case "2":
                     {
-                        //var giftMsg = JsonConvert.DeserializeObject(data, typeof(GiftMsg)) as GiftMsg;
+                        //var
+                        //= JsonConvert.DeserializeObject(data, typeof(GiftMsg)) as GiftMsg;
                         MessageDistribute.GiftMsg msg = new MessageDistribute.GiftMsg();
                         msg.giftId = int.Parse(data.Split(separator: ',')[3]);
                         msg.giftName = data.Split(separator: ',')[4];
